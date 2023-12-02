@@ -1,0 +1,8 @@
+CREATE DATABASE minions_db;
+
+--- task 1 ---
+CREATE TABLE IF NOT EXISTS minions (
+  id SERIAL PRIMARY KEY,
+  "name" VARCHAR(30),
+  "age" INTEGER
+);

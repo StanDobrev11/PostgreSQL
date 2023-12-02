@@ -1,0 +1,64 @@
+1. Data types in SQL
+ - txt -> CHAR() 1 only, CHAR(30) exactly 30, VARCHAR(30) - to 30, VARCHAR() & TEXT - any length
+ - int - > SMALLINT, INTEGER/INT, BIGINT
+ - floats,
+ - dates, DATE, TIME, TIMESTAMP, TIMESTAMPTZ
+ - bool values
+
+
+CREATE TABLE employees (
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(30),
+    last_name VARCHAR(30),
+    hiring_date DATE DEFAULT '2023-01-01',
+    salary NUMERIC(10, 2),
+    devices_number INT
+);
+
+CREATE TABLE departments (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    code CHAR(3),
+    description TEXT
+);
+--- creating table with property and constrains of the colums ---
+CREATE TABLE issues (
+    id SERIAL PRIMARY KEY,
+    description VARCHAR(150),
+    date DATE,
+    start TIMESTAMP
+);
+
+--- adding column ----
+ALTER TABLE employees
+ADD COLUMN middle_name VARCHAR(50)
+
+--- setting constrains ---
+ALTER TABLE employees
+ALTER COLUMN salary SET NOT NULL,
+ALTER COLUMN hiring_date SET NOT NULL,
+ALTER COLUMN salary SET DEFAULT 0;
+
+--- changing property ---
+ALTER TABLE employees
+ALTER COLUMN middle_name TYPE VARCHAR(100)
+
+if you what to cast existing objects to the new type:
+ALTER COLUMN middle_name TYPE TEXT::
+
+
+--- truncate tables ---
+TRUNCATE TABLE issues
+
+deletes all the info inside the table w/out the table itself
+
+--- deletes the table and its contents ---
+DROP TABLE departments
+
+
+--- create column PRIMARY KEY to be serial but w/out option to be passed by user ---
+CREATE TABLE test(
+    id int PRIMARY KEY GENERATED ALWAYS AS IDENTITY
+    first_name VARCHAR(30)
+    last_name VARCHAR(30)
+
