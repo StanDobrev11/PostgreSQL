@@ -1,1 +1,1 @@
-CREATE DATABASE minions_db;
+CREATE DATABASE minions_db  ;
