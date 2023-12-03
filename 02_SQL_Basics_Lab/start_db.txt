@@ -1,0 +1,4 @@
+
+initdb d:\test_db
+pg_ctl -D d:\test_db start
+psql -d d:\test_db
