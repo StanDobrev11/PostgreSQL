@@ -4,8 +4,8 @@ pg_ctl start -D "C:\Program Files\PostgreSQL\15\data"
 -- connect psql
 psql -U postgres
 
-
-
+-- import db
+dir containing db >>>psql -U postgres -d <name of db> -f <path to db in "">
 
 1. Data types in SQL
  - txt -> CHAR() 1 only, CHAR(30) exactly 30, VARCHAR(30) - to 30, VARCHAR() & TEXT - any length
