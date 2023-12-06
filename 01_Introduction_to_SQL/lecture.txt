@@ -1,3 +1,10 @@
+-- mack ... .com - to generate tables
+
+-- \pset pager off - to display all
+
+-- set certain row count to display
+\SET rows 30
+
 -- to start the service
 pg_ctl start -D "C:\Program Files\PostgreSQL\15\data"
 
@@ -5,7 +12,8 @@ pg_ctl start -D "C:\Program Files\PostgreSQL\15\data"
 psql -U postgres
 
 -- import db
-dir containing db >>>psql -U postgres -d <name of db> -f <path to db in "">
+CREATE DB then use DB name down
+dir containing db >>>psql -U postgres -d <name of db which we want to use> -f <path to db in "">
 
 1. Data types in SQL
  - txt -> CHAR() 1 only, CHAR(30) exactly 30, VARCHAR(30) - to 30, VARCHAR() & TEXT - any length
