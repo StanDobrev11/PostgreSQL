@@ -24,8 +24,10 @@ SELECT
     id AS "ID",
     concat_ws(' ', first_name, last_name) AS "Full Name",
     job_title AS "Job Title"
-FROM employees
-ORDER BY first_name
+FROM
+    employees
+ORDER BY
+    first_name
 LIMIT 50;
 ----------------------------------------------------------------
 --05. Skip Rows
@@ -33,8 +35,10 @@ SELECT
     id AS "ID",
     concat_ws(' ', first_name, middle_name, last_name) AS "Full Name",
     hire_date AS "Hire Date"
-FROM employees
-ORDER BY hire_date ASC
+FROM
+    employees
+ORDER BY
+    hire_date ASC
 OFFSET 9;
 ----------------------------------------------------------------
 -- 06. Find the Addresses
@@ -194,8 +198,8 @@ WHERE
 ----------------------------------------------------------------
 -- 20. Create a View with Multiple Tables
 CREATE VIEW
-    view_addresses
-AS SELECT
+    view_addresses AS
+SELECT
     concat_ws(' ', employees.first_name, employees.last_name) AS "Full Name",
     department_id,
     concat_ws(' ', addresses.number, addresses.street) AS address
@@ -204,6 +208,19 @@ FROM
     addresses
 WHERE
     addresses.id = employees.address_id;
+--- THIS IS THE PREFERRED METHOD OF JOINING TABLES BY KEY ---
+CREATE VIEW IF NOT EXISTS
+    view_addresses AS
+SELECT
+    concat_ws(' ', e.first_name, e.last_name) AS "Full Name",
+    e.department_id,
+    concat_ws(' ', a.number, a.street) AS address
+FROM
+    employees AS e
+JOIN
+    addresses AS a
+        ON
+    e.address_id = a.id;
 ----------------------------------------------------------------
 -- 21. ALTER VIEW
 ALTER VIEW
@@ -216,10 +233,35 @@ DROP VIEW
     view_company_chart;
 ----------------------------------------------------------------
 -- 23. UPPER
-ALTER TABLE
+UPDATE
     projects
-ALTER COLUMN
-    name RENAME TO UPPER(name);
+SET
+    name = upper(name)
+RETURNING *;
+----------------------------------------------------------------
+-- 24. SUBSTRING
+CREATE VIEW
+    view_initials AS
+SELECT
+--    SUBSTRING(first_name, 1, 2) AS initial,
+    LEFT(first_name, 2) AS initial,
+    last_name
+FROM
+    employees
+ORDER BY
+    last_name ASC;
+----------------------------------------------------------------
+-- 25 LIKE
+SELECT
+    name,
+    start_date
+FROM
+    projects
+WHERE
+    name LIKE 'MOUNT%'
+ORDER BY
+    id;
+
 
 
 
