@@ -1,4 +1,7 @@
--- mack ... .com - to generate tables
+-- CREATING SCRIPT OF EXISTING TABLE AND THEN USE IT TO CREATE ANOTHER
+pg_dump -h your_host -d your_database -U your_user -t your_table --schema-only -f schema_script.sql
+
+-- mockaroo.com ... .com - to generate tables
 
 -- \pset pager off - to display all
 
