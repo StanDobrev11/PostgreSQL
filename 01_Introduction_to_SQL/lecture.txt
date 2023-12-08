@@ -11,8 +11,18 @@ pg_dump -h your_host -d your_database -U your_user -t your_table --schema-only -
 -- to start the service
 pg_ctl start -D "C:\Program Files\PostgreSQL\15\data"
 
+-- to check if server is listening:
+powershell
+Get-NetTCPConnection -LocalPort 5432
+cmd
+netstat -ano | find "5432"
+
+-- kill process if LISTENING
+powershell
+Stop-Process -Id 5628
+
 -- connect psql
-psql -U postgres
+psql -U postgres -p "5433"
 
 -- import db
 CREATE DB then use DB name down
