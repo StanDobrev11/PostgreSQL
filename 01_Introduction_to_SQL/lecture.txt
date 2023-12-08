@@ -24,6 +24,12 @@ Stop-Process -Id 5628
 -- connect psql
 psql -U postgres -p "5433"
 
+-- start process
+sc query "PostgreSQL"
+sc start "PostgreSQL"
+sc stop "PostgreSQL"
+
+
 -- import db
 CREATE DB then use DB name down
 dir containing db >>>psql -U postgres -d <name of db which we want to use> -f <path to db in "">

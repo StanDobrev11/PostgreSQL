@@ -138,3 +138,191 @@ SELECT
     RTRIM(peak_name, 'm') AS "Right Trim"
 FROM
     peaks;
+-------------------------------------------------------------
+-- 11 Character Length and Bits
+SELECT
+    concat(m.mountain_range, ' ', p.peak_name) AS "Mountain Information",
+    length(concat(m.mountain_range, ' ', p.peak_name)) AS "Characters Length",
+    bit_length(concat(m.mountain_range, ' ', p.peak_name)) AS "Bits of a String"
+FROM
+    mountains AS m,
+    peaks AS p
+WHERE
+    m.id = p.mountain_id;
+-------------------------------------------------------------
+-- 12 Length of number
+SELECT
+    population,
+    length(cast(population AS VARCHAR))
+FROM
+    countries;
+-------------------------------------------------------------
+-- 13 Positive and Negative LEFT
+SELECT
+    peak_name,
+    left(peak_name, 4) AS "Positive Left",
+    left(peak_name, -4) AS "Negative Left"
+FROM
+    peaks;
+-------------------------------------------------------------
+--14. Positive and Negative RIGHT
+SELECT
+    peak_name,
+    right(peak_name, 4) AS "Positive Right",
+    right(peak_name, -4) AS "Negative Right"
+FROM
+    peaks;
+-------------------------------------------------------------
+--15. Update iso_code
+UPDATE
+    countries
+SET
+    iso_code = UPPER(LEFT(country_name, 3))
+WHERE
+    iso_code is NULL;
+-------------------------------------------------------------
+-- 16. REVERSE country_code
+UPDATE
+    countries
+SET
+    country_code = REVERSE(LOWER(country_code));
+-------------------------------------------------------------
+--17. Elevation --->> Peak Name
+SELECT
+    concat(elevation, ' ', repeat('-', 3), repeat('>', 2), ' ', peak_name) AS "Elevation --->> Peak Name"
+FROM
+    peaks
+WHERE
+    elevation >= 4884;
+-------------------------------------------------------------
+-- 18 Arithmetical Operators
+-- booking_db
+CREATE TABLE
+    bookings_calculation AS
+SELECT
+    booked_for,
+    CAST(booked_for * 50 AS NUMERIC) AS multiplication,
+    CAST(booked_for % 50 AS NUMERIC) AS modulo
+FROM
+    bookings
+WHERE
+    apartment_id = 93;
+-------------------------------------------------------------
+-- 19 ROUND vs TRUNC
+SELECT
+    latitude,
+    round(latitude, 2) AS round,
+    trunc(latitude, 2) AS trunc
+FROM
+    apartments;
+-------------------------------------------------------------
+-- 20. Absolute Value
+SELECT
+    longitude,
+    abs(longitude)
+FROM
+    apartments;
+-------------------------------------------------------------
+-- 21. Billing Day**
+ALTER TABLE
+    bookings
+ADD COLUMN
+    billing_day TIMESTAMPTZ DEFAULT NOW();
+
+--SELECT
+--    billing_day
+--FROM
+--    bookings
+
+SELECT
+    to_char(billing_day, 'DD "Day" MM "Month" YYYY "Year" HH24:MI:SS') AS "Billing Day"
+FROM
+    bookings;
+-----------------------------------------------------------
+--22. EXTRACT Booked At
+SELECT
+    to_char(booked_at, 'YYYY') AS "YEAR",
+    to_char(booked_at, 'MM') AS "MONTH",
+    to_char(booked_at, 'DD') AS "DAY",
+    to_char(booked_at AT TIME ZONE 'UTC', 'HH') AS "HOUR",
+    to_char(booked_at, 'MM') AS "MINUTE",
+    ceil(CAST(to_char(booked_at, 'SS') AS NUMERIC)) AS "SECOND"
+FROM
+    bookings;
+
+SELECT
+    extract(YEAR FROM booked_at) AS "YEAR",
+    extract(MONTH FROM booked_at) AS "MONTH",
+    extract(DAY FROM booked_at) AS "DAY",
+    extract(HOUR FROM booked_at AT TIME ZONE 'UTC') AS "HOUR",
+    extract(MINUTE FROM booked_at) AS "MINUTE",
+    ceil(extract(SECOND FROM booked_at)) AS "SECOND"
+FROM
+    bookings;
+
+SELECT
+    id,
+    booked_at,
+    pg_typeof(booked_at) AS data_type,
+    booked_at AT TIME ZONE 'UTC' AS converted_utc_value
+FROM
+    bookings;
+-----------------------------------------------------------
+--23. Early Birds
+SELECT
+    user_id,
+    age(starts_at, booked_at) AS "Early Birds"
+FROM
+    bookings
+WHERE
+    starts_at - booked_at > '10 MONTH';
+-----------------------------------------------------------
+-- 24 . EXTRACT Booked At
+SELECT
+    companion_full_name,
+    email
+FROM
+    users
+WHERE
+    companion_full_name iLIKE '%aNd%'
+        AND
+    email NOT LIKE '%@gmail';
+-----------------------------------------------------------
+-- 25COUNT by Initial
+SELECT
+    LEFT(first_name, 2) AS initials,
+    COUNT('initials') AS user_count
+FROM
+    users
+GROUP BY
+    initials
+ORDER BY
+    user_count DESC,
+    initials ASC;
+-----------------------------------------------------------
+-- 26 SUM
+SELECT
+    SUM(booked_for) AS total_value
+FROM
+    bookings
+WHERE
+    apartment_id = 90;
+-----------------------------------------------------------
+-- 27 AVERAGE
+SELECT
+    AVG(multiplication) AS total_value
+FROM
+    bookings_calculation;
+
+
+
+
+
+
+
+
+
+
+
+
+

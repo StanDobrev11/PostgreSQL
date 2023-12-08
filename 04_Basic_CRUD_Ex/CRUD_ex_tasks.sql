@@ -97,7 +97,7 @@ FROM
     employees_projects
 WHERE
     employee_id IN (200, 250)
-    AND
+        AND
     project_id NOT IN (50, 100);
 ----------------------------------------------------------------
 -- 11. Compare Character Values
