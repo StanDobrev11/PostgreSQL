@@ -1,0 +1,21 @@
+Design of DB:
+1. identification of entities - establish what will consist the DB
+2. define table columns
+3. define primary keys - should be UNIQUE
+4. modeling relationships
+5. define constrains
+6. filing test data
+
+BASIC GUIDES:
+DRY: DONT REPEAT URSELF
+UNIQUE KEYS
+NULL ONLY WHERE NECESSARY
+REFERENCE INTEGRATIION
+ATOMIC DATA
+CORRECT CHOICE OF DATA
+INDEXATION
+
+id INT PRIMARY KEY - id was input manually
+id INT SERIAL PRIMARY KEY - id automatically but also can be updated manually loosing the auto sequence
+id INT GENERATED ALWAYS AS IDENTITY - full auto
+id INT
