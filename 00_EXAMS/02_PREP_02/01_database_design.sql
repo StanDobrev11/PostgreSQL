@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS courses(
     id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     from_address_id INT NOT NULL,
     start TIMESTAMP NOT NULL,
-    bill NUMERIC(8, 2) DEFAULT 10 CHECK (bill > 0),
+    bill NUMERIC(10, 2) DEFAULT 10 CHECK (bill > 0),
     car_id INT NOT NULL,
     client_id INT NOT NULL,
 
