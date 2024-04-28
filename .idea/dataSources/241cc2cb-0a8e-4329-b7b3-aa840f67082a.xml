@@ -3,9 +3,9 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.51">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>850</IntrospectionStateNumber>
+      <IntrospectionStateNumber>832</IntrospectionStateNumber>
       <ServerVersion>16.2</ServerVersion>
-      <StartupTime>1714043981</StartupTime>
+      <StartupTime>1714290510</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -1393,10 +1393,13 @@ true posixrules
       <Grants>11||10|C|G
 11||-9223372036854775808|U|G
 11||10|U|G
+2200||6171|C|G
+2200||-9223372036854775808|U|G
+2200||6171|U|G
 13212||10|C|G
 13212||-9223372036854775808|U|G
 13212||10|U|G</Grants>
-      <IntrospectionStateNumber>850</IntrospectionStateNumber>
+      <IntrospectionStateNumber>832</IntrospectionStateNumber>
       <ObjectId>16384</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4818,589 +4821,628 @@ true posixrules
       <OwnerName>postgres</OwnerName>
     </schema>
     <schema id="264" parent="2" name="public">
+      <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>850</IntrospectionStateNumber>
-      <LastIntrospectionLocalTimestamp>2024-04-27.18:21:13</LastIntrospectionLocalTimestamp>
-      <ObjectId>16473</ObjectId>
-      <StateNumber>773</StateNumber>
-      <OwnerName>postgres</OwnerName>
+      <IntrospectionStateNumber>832</IntrospectionStateNumber>
+      <LastIntrospectionLocalTimestamp>2024-04-28.10:07:46</LastIntrospectionLocalTimestamp>
+      <ObjectId>2200</ObjectId>
+      <StateNumber>524</StateNumber>
+      <OwnerName>pg_database_owner</OwnerName>
     </schema>
-    <routine id="265" parent="264" name="fn_courses_by_client">
-      <ArgumentsDefinition>phone_num character varying</ArgumentsDefinition>
-      <ObjectId>16553</ObjectId>
+    <routine id="265" parent="264" name="fn_creator_with_board_games">
+      <ArgumentsDefinition>target_first_name character varying</ArgumentsDefinition>
+      <ObjectId>16465</ObjectId>
       <ResultsDefinition>integer</ResultsDefinition>
       <Rows>0.0</Rows>
-      <SourceTextLength>250</SourceTextLength>
-      <StateNumber>798</StateNumber>
+      <SourceTextLength>267</SourceTextLength>
+      <StateNumber>770</StateNumber>
       <LanguageName>plpgsql</LanguageName>
       <OwnerName>postgres</OwnerName>
     </routine>
-    <routine id="266" parent="264" name="sp_courses_by_address">
-      <ArgumentsDefinition>IN address_name character varying</ArgumentsDefinition>
-      <ObjectId>16561</ObjectId>
+    <routine id="266" parent="264" name="usp_search_by_category">
+      <ArgumentsDefinition>IN cat_name character varying</ArgumentsDefinition>
+      <ObjectId>16476</ObjectId>
       <PgRoutineKind>pg-procedure</PgRoutineKind>
       <Rows>0.0</Rows>
-      <SourceTextLength>1027</SourceTextLength>
-      <StateNumber>849</StateNumber>
+      <SourceTextLength>883</SourceTextLength>
+      <StateNumber>816</StateNumber>
       <LanguageName>plpgsql</LanguageName>
       <OwnerName>postgres</OwnerName>
     </routine>
-    <sequence id="267" parent="264" name="addresses_id_seq">
-      <DasType>integer|0s</DasType>
-      <ObjectId>16474</ObjectId>
-      <SequenceIdentity>1</SequenceIdentity>
-      <StartValue>1</StartValue>
-      <StateNumber>774</StateNumber>
-      <OwnerName>postgres</OwnerName>
-    </sequence>
-    <sequence id="268" parent="264" name="cars_id_seq">
-      <DasType>integer|0s</DasType>
-      <ObjectId>16500</ObjectId>
-      <SequenceIdentity>1</SequenceIdentity>
-      <StartValue>1</StartValue>
-      <StateNumber>778</StateNumber>
-      <OwnerName>postgres</OwnerName>
-    </sequence>
-    <sequence id="269" parent="264" name="categories_id_seq">
-      <DasType>integer|0s</DasType>
-      <ObjectId>16480</ObjectId>
-      <SequenceIdentity>1</SequenceIdentity>
-      <StartValue>1</StartValue>
-      <StateNumber>775</StateNumber>
-      <OwnerName>postgres</OwnerName>
-    </sequence>
-    <sequence id="270" parent="264" name="clients_id_seq">
-      <DasType>integer|0s</DasType>
-      <ObjectId>16486</ObjectId>
-      <SequenceIdentity>1</SequenceIdentity>
-      <StartValue>1</StartValue>
-      <StateNumber>776</StateNumber>
-      <OwnerName>postgres</OwnerName>
-    </sequence>
-    <sequence id="271" parent="264" name="courses_id_seq">
-      <DasType>integer|0s</DasType>
-      <ObjectId>16515</ObjectId>
-      <SequenceIdentity>1</SequenceIdentity>
-      <StartValue>1</StartValue>
-      <StateNumber>779</StateNumber>
-      <OwnerName>postgres</OwnerName>
-    </sequence>
-    <sequence id="272" parent="264" name="drivers_id_seq">
-      <DasType>integer|0s</DasType>
-      <ObjectId>16492</ObjectId>
-      <SequenceIdentity>1</SequenceIdentity>
-      <StartValue>1</StartValue>
-      <StateNumber>777</StateNumber>
-      <OwnerName>postgres</OwnerName>
-    </sequence>
-    <sequence id="273" parent="264" name="search_results_id_seq">
-      <DasType>integer|0s</DasType>
-      <ObjectId>16598</ObjectId>
-      <SequenceIdentity>1</SequenceIdentity>
-      <StartValue>1</StartValue>
-      <StateNumber>847</StateNumber>
-      <OwnerName>postgres</OwnerName>
-    </sequence>
-    <table id="274" parent="264" name="addresses">
-      <ObjectId>16475</ObjectId>
-      <StateNumber>779</StateNumber>
-      <AccessMethodId>2</AccessMethodId>
-      <OwnerName>postgres</OwnerName>
-    </table>
-    <table id="275" parent="264" name="cars">
+    <routine id="267" parent="264" name="usp_search_by_category_2">
+      <ArgumentsDefinition>IN category character varying</ArgumentsDefinition>
       <ObjectId>16501</ObjectId>
-      <StateNumber>778</StateNumber>
+      <PgRoutineKind>pg-procedure</PgRoutineKind>
+      <Rows>0.0</Rows>
+      <SourceTextLength>797</SourceTextLength>
+      <StateNumber>823</StateNumber>
+      <LanguageName>plpgsql</LanguageName>
+      <OwnerName>postgres</OwnerName>
+    </routine>
+    <sequence id="268" parent="264" name="addresses_id_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>16391</ObjectId>
+      <SequenceIdentity>1</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>733</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="269" parent="264" name="board_games_id_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>16424</ObjectId>
+      <SequenceIdentity>1</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>737</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="270" parent="264" name="categories_id_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>16385</ObjectId>
+      <SequenceIdentity>1</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>732</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="271" parent="264" name="creators_id_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>16418</ObjectId>
+      <SequenceIdentity>1</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>736</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="272" parent="264" name="players_ranges_id_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>16410</ObjectId>
+      <SequenceIdentity>1</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>735</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="273" parent="264" name="publishers_id_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>16399</ObjectId>
+      <SequenceIdentity>1</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>734</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="274" parent="264" name="search_results_id_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>16557</ObjectId>
+      <SequenceIdentity>1</SequenceIdentity>
+      <StartValue>1</StartValue>
+      <StateNumber>830</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <table id="275" parent="264" name="addresses">
+      <ObjectId>16392</ObjectId>
+      <StateNumber>734</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="276" parent="264" name="cars_drivers">
-      <ObjectId>16538</ObjectId>
-      <StateNumber>780</StateNumber>
+    <table id="276" parent="264" name="board_games">
+      <ObjectId>16425</ObjectId>
+      <StateNumber>737</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="277" parent="264" name="categories">
-      <ObjectId>16481</ObjectId>
-      <StateNumber>778</StateNumber>
+      <ObjectId>16386</ObjectId>
+      <StateNumber>737</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="278" parent="264" name="clients">
-      <ObjectId>16487</ObjectId>
-      <StateNumber>779</StateNumber>
+    <table id="278" parent="264" name="creators">
+      <ObjectId>16419</ObjectId>
+      <StateNumber>738</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="279" parent="264" name="courses">
-      <ObjectId>16516</ObjectId>
-      <StateNumber>779</StateNumber>
+    <table id="279" parent="264" name="creators_board_games">
+      <ObjectId>16446</ObjectId>
+      <StateNumber>738</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="280" parent="264" name="drivers">
-      <ObjectId>16493</ObjectId>
-      <StateNumber>780</StateNumber>
+    <table id="280" parent="264" name="players_ranges">
+      <ObjectId>16411</ObjectId>
+      <StateNumber>737</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="281" parent="264" name="search_results">
-      <ObjectId>16599</ObjectId>
-      <StateNumber>847</StateNumber>
+    <table id="281" parent="264" name="publishers">
+      <ObjectId>16400</ObjectId>
+      <StateNumber>734</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <argument id="282" parent="265">
+    <table id="282" parent="264" name="search_results">
+      <ObjectId>16558</ObjectId>
+      <StateNumber>830</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <argument id="283" parent="265">
       <ArgumentDirection>R</ArgumentDirection>
       <DasType>integer|0s</DasType>
     </argument>
-    <argument id="283" parent="265" name="phone_num">
+    <argument id="284" parent="265" name="target_first_name">
       <DasType>varchar|0s</DasType>
       <Position>1</Position>
     </argument>
-    <argument id="284" parent="265" name="number_of_courses">
+    <argument id="285" parent="265">
       <ArgumentDirection>O</ArgumentDirection>
       <DasType>integer|0s</DasType>
       <Position>2</Position>
     </argument>
-    <argument id="285" parent="266" name="address_name">
+    <argument id="286" parent="266" name="cat_name">
       <DasType>varchar|0s</DasType>
       <Position>1</Position>
     </argument>
-    <column id="286" parent="274" name="id">
+    <argument id="287" parent="267" name="category">
+      <DasType>varchar|0s</DasType>
+      <Position>1</Position>
+    </argument>
+    <check id="288" parent="275" name="addresses_street_number_check">
+      <ColNames>street_number</ColNames>
+      <ObjectId>16395</ObjectId>
+      <Predicate>street_number &gt; 0</Predicate>
+      <StateNumber>733</StateNumber>
+    </check>
+    <check id="289" parent="275" name="addresses_zip_code_check">
+      <ColNames>zip_code</ColNames>
+      <ObjectId>16396</ObjectId>
+      <Predicate>zip_code &gt; 0</Predicate>
+      <StateNumber>733</StateNumber>
+    </check>
+    <column id="290" parent="275" name="id">
       <DasType>integer|0s</DasType>
       <IdentityKind>always</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>774</StateNumber>
-      <SequenceId>16474</SequenceId>
+      <StateNumber>733</StateNumber>
+      <SequenceId>16391</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="287" parent="274" name="name">
+    <column id="291" parent="275" name="street_name">
       <DasType>varchar(100)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>774</StateNumber>
+      <StateNumber>733</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="288" parent="274" name="addresses_pkey">
+    <column id="292" parent="275" name="street_number">
+      <DasType>integer|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>733</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="293" parent="275" name="town">
+      <DasType>varchar(30)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StateNumber>733</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="294" parent="275" name="country">
+      <DasType>varchar(50)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StateNumber>733</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="295" parent="275" name="zip_code">
+      <DasType>integer|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StateNumber>733</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="296" parent="275" name="addresses_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16478</ObjectId>
+      <ObjectId>16397</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>774</StateNumber>
+      <StateNumber>733</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="289" parent="274" name="addresses_pkey">
+    <key id="297" parent="275" name="addresses_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16479</ObjectId>
+      <ObjectId>16398</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>774</StateNumber>
-      <UnderlyingIndexId>16478</UnderlyingIndexId>
+      <StateNumber>733</StateNumber>
+      <UnderlyingIndexId>16397</UnderlyingIndexId>
     </key>
-    <check id="290" parent="275" name="cars_mileage_check">
-      <ColNames>mileage</ColNames>
-      <ObjectId>16507</ObjectId>
-      <Predicate>mileage &gt; 0</Predicate>
-      <StateNumber>778</StateNumber>
+    <check id="298" parent="276" name="board_games_release_year_check">
+      <ColNames>release_year</ColNames>
+      <ObjectId>16428</ObjectId>
+      <Predicate>release_year &gt; 0</Predicate>
+      <StateNumber>737</StateNumber>
     </check>
-    <check id="291" parent="275" name="cars_year_check">
-      <ColNames>year</ColNames>
-      <ObjectId>16506</ObjectId>
-      <Predicate>year &gt; 0</Predicate>
-      <StateNumber>778</StateNumber>
-    </check>
-    <column id="292" parent="275" name="id">
+    <column id="299" parent="276" name="id">
       <DasType>integer|0s</DasType>
       <IdentityKind>always</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>778</StateNumber>
-      <SequenceId>16500</SequenceId>
+      <StateNumber>737</StateNumber>
+      <SequenceId>16424</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="293" parent="275" name="make">
-      <DasType>varchar(20)|0s</DasType>
+    <column id="300" parent="276" name="name">
+      <DasType>varchar(30)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>778</StateNumber>
+      <StateNumber>737</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="294" parent="275" name="model">
-      <DasType>varchar(20)|0s</DasType>
-      <Position>3</Position>
-      <StateNumber>778</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="295" parent="275" name="year">
+    <column id="301" parent="276" name="release_year">
       <DasType>integer|0s</DasType>
-      <DefaultExpression>0</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>737</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="302" parent="276" name="rating">
+      <DasType>numeric(3,2 digit)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>778</StateNumber>
-      <TypeId>23</TypeId>
+      <StateNumber>737</StateNumber>
+      <TypeId>1700</TypeId>
     </column>
-    <column id="296" parent="275" name="mileage">
+    <column id="303" parent="276" name="category_id">
       <DasType>integer|0s</DasType>
-      <DefaultExpression>0</DefaultExpression>
+      <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>778</StateNumber>
+      <StateNumber>737</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="297" parent="275" name="condition">
-      <DasType>char|0s</DasType>
+    <column id="304" parent="276" name="publisher_id">
+      <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
-      <StateNumber>778</StateNumber>
-      <TypeId>1042</TypeId>
+      <StateNumber>737</StateNumber>
+      <TypeId>23</TypeId>
     </column>
-    <column id="298" parent="275" name="category_id">
+    <column id="305" parent="276" name="players_range_id">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
-      <StateNumber>778</StateNumber>
+      <StateNumber>737</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="299" parent="275" name="fk_cars_categories">
+    <foreign-key id="306" parent="276" name="fk_board_games_categories">
       <ColNames>category_id</ColNames>
-      <ObjectId>16510</ObjectId>
+      <ObjectId>16431</ObjectId>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
-      <StateNumber>778</StateNumber>
+      <StateNumber>737</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
-      <RefTableId>16481</RefTableId>
+      <RefTableId>16386</RefTableId>
     </foreign-key>
-    <index id="300" parent="275" name="cars_pkey">
+    <foreign-key id="307" parent="276" name="fk_board_games_publishers">
+      <ColNames>publisher_id</ColNames>
+      <ObjectId>16436</ObjectId>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <StateNumber>737</StateNumber>
+      <RefKeyColPositions>1</RefKeyColPositions>
+      <RefTableId>16400</RefTableId>
+    </foreign-key>
+    <foreign-key id="308" parent="276" name="fk_board_games_players_ranges">
+      <ColNames>players_range_id</ColNames>
+      <ObjectId>16441</ObjectId>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <StateNumber>737</StateNumber>
+      <RefKeyColPositions>1</RefKeyColPositions>
+      <RefTableId>16411</RefTableId>
+    </foreign-key>
+    <index id="309" parent="276" name="board_games_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16508</ObjectId>
+      <ObjectId>16429</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>778</StateNumber>
+      <StateNumber>737</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="301" parent="275" name="cars_pkey">
+    <key id="310" parent="276" name="board_games_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16509</ObjectId>
+      <ObjectId>16430</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>778</StateNumber>
-      <UnderlyingIndexId>16508</UnderlyingIndexId>
+      <StateNumber>737</StateNumber>
+      <UnderlyingIndexId>16429</UnderlyingIndexId>
     </key>
-    <column id="302" parent="276" name="car_id">
-      <DasType>integer|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>780</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="303" parent="276" name="driver_id">
-      <DasType>integer|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StateNumber>780</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <foreign-key id="304" parent="276" name="fk_cars_drivers_cars">
-      <ColNames>car_id</ColNames>
-      <ObjectId>16541</ObjectId>
-      <OnDelete>cascade</OnDelete>
-      <OnUpdate>cascade</OnUpdate>
-      <StateNumber>780</StateNumber>
-      <RefKeyColPositions>1</RefKeyColPositions>
-      <RefTableId>16501</RefTableId>
-    </foreign-key>
-    <foreign-key id="305" parent="276" name="fk_cars_drivers_drivers">
-      <ColNames>driver_id</ColNames>
-      <ObjectId>16546</ObjectId>
-      <OnDelete>cascade</OnDelete>
-      <OnUpdate>cascade</OnUpdate>
-      <StateNumber>780</StateNumber>
-      <RefKeyColPositions>1</RefKeyColPositions>
-      <RefTableId>16493</RefTableId>
-    </foreign-key>
-    <column id="306" parent="277" name="id">
+    <column id="311" parent="277" name="id">
       <DasType>integer|0s</DasType>
       <IdentityKind>always</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>775</StateNumber>
-      <SequenceId>16480</SequenceId>
+      <StateNumber>732</StateNumber>
+      <SequenceId>16385</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="307" parent="277" name="name">
-      <DasType>varchar(10)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StateNumber>775</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <index id="308" parent="277" name="categories_pkey">
-      <ColNames>id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16484</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>775</StateNumber>
-      <Unique>1</Unique>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <key id="309" parent="277" name="categories_pkey">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16485</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>775</StateNumber>
-      <UnderlyingIndexId>16484</UnderlyingIndexId>
-    </key>
-    <column id="310" parent="278" name="id">
-      <DasType>integer|0s</DasType>
-      <IdentityKind>always</IdentityKind>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>776</StateNumber>
-      <SequenceId>16486</SequenceId>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="311" parent="278" name="full_name">
+    <column id="312" parent="277" name="name">
       <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>776</StateNumber>
+      <StateNumber>732</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="312" parent="278" name="phone_number">
+    <index id="313" parent="277" name="categories_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16389</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>732</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="314" parent="277" name="categories_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16390</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>732</StateNumber>
+      <UnderlyingIndexId>16389</UnderlyingIndexId>
+    </key>
+    <column id="315" parent="278" name="id">
+      <DasType>integer|0s</DasType>
+      <IdentityKind>always</IdentityKind>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>736</StateNumber>
+      <SequenceId>16418</SequenceId>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="316" parent="278" name="first_name">
+      <DasType>varchar(30)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>736</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="317" parent="278" name="last_name">
+      <DasType>varchar(30)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>736</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="318" parent="278" name="email">
+      <DasType>varchar(30)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StateNumber>736</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="319" parent="278" name="creators_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16422</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>736</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="320" parent="278" name="creators_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16423</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>736</StateNumber>
+      <UnderlyingIndexId>16422</UnderlyingIndexId>
+    </key>
+    <column id="321" parent="279" name="creator_id">
+      <DasType>integer|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>738</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="322" parent="279" name="board_game_id">
+      <DasType>integer|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>738</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="323" parent="279" name="fk_creators_board_games_creators">
+      <ColNames>creator_id</ColNames>
+      <ObjectId>16449</ObjectId>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <StateNumber>738</StateNumber>
+      <RefKeyColPositions>1</RefKeyColPositions>
+      <RefTableId>16419</RefTableId>
+    </foreign-key>
+    <foreign-key id="324" parent="279" name="fk_creators_board_games_board_games">
+      <ColNames>board_game_id</ColNames>
+      <ObjectId>16454</ObjectId>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+      <StateNumber>738</StateNumber>
+      <RefKeyColPositions>1</RefKeyColPositions>
+      <RefTableId>16425</RefTableId>
+    </foreign-key>
+    <check id="325" parent="280" name="players_ranges_max_players_check">
+      <ColNames>max_players</ColNames>
+      <ObjectId>16415</ObjectId>
+      <Predicate>max_players &gt; 0</Predicate>
+      <StateNumber>735</StateNumber>
+    </check>
+    <check id="326" parent="280" name="players_ranges_min_players_check">
+      <ColNames>min_players</ColNames>
+      <ObjectId>16414</ObjectId>
+      <Predicate>min_players &gt; 0</Predicate>
+      <StateNumber>735</StateNumber>
+    </check>
+    <column id="327" parent="280" name="id">
+      <DasType>integer|0s</DasType>
+      <IdentityKind>always</IdentityKind>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>735</StateNumber>
+      <SequenceId>16410</SequenceId>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="328" parent="280" name="min_players">
+      <DasType>integer|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>735</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="329" parent="280" name="max_players">
+      <DasType>integer|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>735</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="330" parent="280" name="players_ranges_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16416</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>735</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="331" parent="280" name="players_ranges_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16417</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>735</StateNumber>
+      <UnderlyingIndexId>16416</UnderlyingIndexId>
+    </key>
+    <column id="332" parent="281" name="id">
+      <DasType>integer|0s</DasType>
+      <IdentityKind>always</IdentityKind>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>734</StateNumber>
+      <SequenceId>16399</SequenceId>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="333" parent="281" name="name">
+      <DasType>varchar(30)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>734</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="334" parent="281" name="address_id">
+      <DasType>integer|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>734</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="335" parent="281" name="website">
+      <DasType>varchar(40)|0s</DasType>
+      <Position>4</Position>
+      <StateNumber>734</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="336" parent="281" name="phone">
       <DasType>varchar(20)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StateNumber>776</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <index id="313" parent="278" name="clients_pkey">
-      <ColNames>id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16490</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>776</StateNumber>
-      <Unique>1</Unique>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <key id="314" parent="278" name="clients_pkey">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16491</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>776</StateNumber>
-      <UnderlyingIndexId>16490</UnderlyingIndexId>
-    </key>
-    <check id="315" parent="279" name="courses_bill_check">
-      <ColNames>bill</ColNames>
-      <ObjectId>16520</ObjectId>
-      <Predicate>bill &gt; (0)::numeric</Predicate>
-      <StateNumber>779</StateNumber>
-    </check>
-    <column id="316" parent="279" name="id">
-      <DasType>integer|0s</DasType>
-      <IdentityKind>always</IdentityKind>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>779</StateNumber>
-      <SequenceId>16515</SequenceId>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="317" parent="279" name="from_address_id">
-      <DasType>integer|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StateNumber>779</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="318" parent="279" name="start">
-      <DasType>timestamp|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StateNumber>779</StateNumber>
-      <TypeId>1114</TypeId>
-    </column>
-    <column id="319" parent="279" name="bill">
-      <DasType>numeric(10,2 digit)|0s</DasType>
-      <DefaultExpression>10</DefaultExpression>
-      <Position>4</Position>
-      <StateNumber>779</StateNumber>
-      <TypeId>1700</TypeId>
-    </column>
-    <column id="320" parent="279" name="car_id">
-      <DasType>integer|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>779</StateNumber>
-      <TypeId>23</TypeId>
+      <StateNumber>734</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
-    <column id="321" parent="279" name="client_id">
-      <DasType>integer|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>6</Position>
-      <StateNumber>779</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <foreign-key id="322" parent="279" name="fk_courses_addresses">
-      <ColNames>from_address_id</ColNames>
-      <ObjectId>16523</ObjectId>
+    <foreign-key id="337" parent="281" name="fk_publishers_addresses">
+      <ColNames>address_id</ColNames>
+      <ObjectId>16405</ObjectId>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
-      <StateNumber>779</StateNumber>
+      <StateNumber>734</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
-      <RefTableId>16475</RefTableId>
+      <RefTableId>16392</RefTableId>
     </foreign-key>
-    <foreign-key id="323" parent="279" name="fk_courses_cars">
-      <ColNames>car_id</ColNames>
-      <ObjectId>16528</ObjectId>
-      <OnDelete>cascade</OnDelete>
-      <OnUpdate>cascade</OnUpdate>
-      <StateNumber>779</StateNumber>
-      <RefKeyColPositions>1</RefKeyColPositions>
-      <RefTableId>16501</RefTableId>
-    </foreign-key>
-    <foreign-key id="324" parent="279" name="fk_courses_clients">
-      <ColNames>client_id</ColNames>
-      <ObjectId>16533</ObjectId>
-      <OnDelete>cascade</OnDelete>
-      <OnUpdate>cascade</OnUpdate>
-      <StateNumber>779</StateNumber>
-      <RefKeyColPositions>1</RefKeyColPositions>
-      <RefTableId>16487</RefTableId>
-    </foreign-key>
-    <index id="325" parent="279" name="courses_pkey">
+    <index id="338" parent="281" name="publishers_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16521</ObjectId>
+      <ObjectId>16403</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>779</StateNumber>
+      <StateNumber>734</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="326" parent="279" name="courses_pkey">
+    <key id="339" parent="281" name="publishers_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16522</ObjectId>
+      <ObjectId>16404</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>779</StateNumber>
-      <UnderlyingIndexId>16521</UnderlyingIndexId>
+      <StateNumber>734</StateNumber>
+      <UnderlyingIndexId>16403</UnderlyingIndexId>
     </key>
-    <check id="327" parent="280" name="drivers_age_check">
-      <ColNames>age</ColNames>
-      <ObjectId>16497</ObjectId>
-      <Predicate>age &gt; 0</Predicate>
-      <StateNumber>777</StateNumber>
-    </check>
-    <column id="328" parent="280" name="id">
-      <DasType>integer|0s</DasType>
-      <IdentityKind>always</IdentityKind>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>777</StateNumber>
-      <SequenceId>16492</SequenceId>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="329" parent="280" name="first_name">
-      <DasType>varchar(30)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StateNumber>777</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="330" parent="280" name="last_name">
-      <DasType>varchar(30)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StateNumber>777</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="331" parent="280" name="age">
-      <DasType>integer|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-      <StateNumber>777</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="332" parent="280" name="rating">
-      <DasType>numeric(2,1 digit)|0s</DasType>
-      <DefaultExpression>5.5</DefaultExpression>
-      <Position>5</Position>
-      <StateNumber>777</StateNumber>
-      <TypeId>1700</TypeId>
-    </column>
-    <index id="333" parent="280" name="drivers_pkey">
-      <ColNames>id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16498</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>777</StateNumber>
-      <Unique>1</Unique>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <key id="334" parent="280" name="drivers_pkey">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16499</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>777</StateNumber>
-      <UnderlyingIndexId>16498</UnderlyingIndexId>
-    </key>
-    <column id="335" parent="281" name="id">
+    <column id="340" parent="282" name="id">
       <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;search_results_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>847</StateNumber>
-      <SequenceId>16598</SequenceId>
+      <StateNumber>830</StateNumber>
+      <SequenceId>16557</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="336" parent="281" name="address_name">
-      <DasType>varchar(100)|0s</DasType>
-      <Position>2</Position>
-      <StateNumber>847</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="337" parent="281" name="full_name">
+    <column id="341" parent="282" name="name">
       <DasType>varchar(50)|0s</DasType>
+      <Position>2</Position>
+      <StateNumber>830</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="342" parent="282" name="release_year">
+      <DasType>integer|0s</DasType>
       <Position>3</Position>
-      <StateNumber>847</StateNumber>
-      <TypeId>1043</TypeId>
+      <StateNumber>830</StateNumber>
+      <TypeId>23</TypeId>
     </column>
-    <column id="338" parent="281" name="level_of_bill">
-      <DasType>varchar(6)|0s</DasType>
+    <column id="343" parent="282" name="rating">
+      <DasType>double precision|0s</DasType>
       <Position>4</Position>
-      <StateNumber>847</StateNumber>
-      <TypeId>1043</TypeId>
+      <StateNumber>830</StateNumber>
+      <TypeId>701</TypeId>
     </column>
-    <column id="339" parent="281" name="make">
-      <DasType>varchar(20)|0s</DasType>
+    <column id="344" parent="282" name="category_name">
+      <DasType>varchar(50)|0s</DasType>
       <Position>5</Position>
-      <StateNumber>847</StateNumber>
+      <StateNumber>830</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="340" parent="281" name="condition">
-      <DasType>char|0s</DasType>
+    <column id="345" parent="282" name="publisher_name">
+      <DasType>varchar(50)|0s</DasType>
       <Position>6</Position>
-      <StateNumber>847</StateNumber>
-      <TypeId>1042</TypeId>
-    </column>
-    <column id="341" parent="281" name="category_name">
-      <DasType>varchar(10)|0s</DasType>
-      <Position>7</Position>
-      <StateNumber>847</StateNumber>
+      <StateNumber>830</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="342" parent="281" name="search_results_pkey">
+    <column id="346" parent="282" name="min_players">
+      <DasType>varchar(50)|0s</DasType>
+      <Position>7</Position>
+      <StateNumber>830</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="347" parent="282" name="max_players">
+      <DasType>varchar(50)|0s</DasType>
+      <Position>8</Position>
+      <StateNumber>830</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="348" parent="282" name="search_results_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16603</ObjectId>
+      <ObjectId>16562</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>847</StateNumber>
+      <StateNumber>830</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="343" parent="281" name="search_results_pkey">
+    <key id="349" parent="282" name="search_results_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16604</ObjectId>
+      <ObjectId>16563</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>847</StateNumber>
-      <UnderlyingIndexId>16603</UnderlyingIndexId>
+      <StateNumber>830</StateNumber>
+      <UnderlyingIndexId>16562</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>
