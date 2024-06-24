@@ -6,6 +6,28 @@
     <file url="file://$PROJECT_DIR$/00_EXAMS/02_PREP_02/01_database_design.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/00_EXAMS/02_PREP_02/02_insert.sql" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/00_EXAMS/04_EXAM_OCT_23/01_database_design.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/05_EXAM_DEC_23/00_dataset.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/05_EXAM_DEC_23/01_database_design.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/05_EXAM_DEC_23/02_insert.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/05_EXAM_DEC_23/03_update.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/05_EXAM_DEC_23/04_delete.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/05_EXAM_DEC_23/05_products.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/05_EXAM_DEC_23/06_negative_feedback.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/05_EXAM_DEC_23/07_high_average_price_and_multiple_feedbacks.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/05_EXAM_DEC_23/08_specific_ingredients.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/05_EXAM_DEC_23/09_middle_range_distributors .sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/05_EXAM_DEC_23/10_customer_feedback.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/05_EXAM_DEC_23/11_customers_country.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/06_EXAM_MAY_24/00_dataset.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/06_EXAM_MAY_24/01_database_design.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/06_EXAM_MAY_24/02_insert.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/06_EXAM_MAY_24/05_accounts.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/06_EXAM_MAY_24/06_top_3_most_commented_photos.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/06_EXAM_MAY_24/07_lucky_account.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/06_EXAM_MAY_24/08_counts_likes_comments.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/06_EXAM_MAY_24/09_photos_captured.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/06_EXAM_MAY_24/10_account_photo_count.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/00_EXAMS/06_EXAM_MAY_24/11_modify_accounts_job_title.sql" dialect="PostgreSQL" />
     <file url="PROJECT" dialect="PostgreSQL" />
   </component>
 </project>
